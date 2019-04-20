@@ -1,0 +1,60 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: cffdb136974baeaa98d02f46c077e8e99f9d627ee55f2e5951efd3b294e73f45
+
+name:           the-super-tiny-compiler
+version:        0.1.0.0
+synopsis:       the-super-tiny-compiler in Haskell
+description:    the-super-tiny-compiler in Haskell
+category:       Game
+homepage:       https://github.com/FranklinChen/the-super-tiny-compiler-haskell#readme
+bug-reports:    https://github.com/FranklinChen/the-super-tiny-compiler-haskell/issues
+author:         Franklin Chen
+maintainer:     franklinchen@franklinchen.com
+copyright:      Franklin Chen
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/FranklinChen/the-super-tiny-compiler-haskell
+
+library
+  exposed-modules:
+      Compiler
+  other-modules:
+      Paths_the_super_tiny_compiler
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base >=4 && <=5
+    , megaparsec
+    , prettyprinter
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      CompilerSpec
+      Paths_the_super_tiny_compiler
+  hs-source-dirs:
+      test
+  ghc-options: -Wall
+  build-depends:
+      QuickCheck
+    , base >=4 && <=5
+    , hspec
+    , hspec-megaparsec
+    , megaparsec
+    , prettyprinter
+    , the-super-tiny-compiler
+  default-language: Haskell2010

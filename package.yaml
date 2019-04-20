@@ -1,0 +1,28 @@
+name: the-super-tiny-compiler
+version: '0.1.0.0'
+synopsis: the-super-tiny-compiler in Haskell
+description: the-super-tiny-compiler in Haskell
+category: Game
+author: Franklin Chen
+maintainer: franklinchen@franklinchen.com
+copyright: Franklin Chen
+license: BSD3
+github: FranklinChen/the-super-tiny-compiler-haskell
+ghc-options: -Wall
+extra-source-files:
+- README.md
+dependencies:
+- base >=4 && <=5
+- megaparsec
+- prettyprinter
+library:
+  source-dirs: src
+tests:
+  spec:
+    main: Spec.hs
+    source-dirs: test
+    dependencies:
+    - the-super-tiny-compiler
+    - hspec
+    - hspec-megaparsec
+    - QuickCheck
